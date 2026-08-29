@@ -3,7 +3,7 @@ window.SALIDAS = [
     id: 'mazatlan',
     titulo: 'Mazatlán',
     destino: 'Plan todo incluido',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: '15 al 18 de enero',
     precio: '$10,799 p/p',
     descripcion: 'Escapada a Mazatlán con servicios incluidos según la promoción publicada.',
@@ -25,7 +25,7 @@ window.SALIDAS = [
     id: 'pena-bernal',
     titulo: 'Peña de Bernal',
     destino: 'Ruta del vino y queso',
-    categoria: 'nacional',
+    categoria: 'pueblos',
     fecha: '16 ago / 17 oct 2026',
     precio: '$1,200 p/p',
     descripcion: 'Tour de un día a Peña de Bernal con ruta del vino y queso.',
@@ -69,7 +69,7 @@ window.SALIDAS = [
     id: 'ixtapa-zihuatanejo',
     titulo: 'Ixtapa Zihuatanejo',
     destino: 'Escapada de playa',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: '14 al 17 de enero',
     precio: '$7,500 p/p',
     descripcion: 'Viaje a Ixtapa Zihuatanejo con hospedaje y transportación según la promoción.',
@@ -80,7 +80,7 @@ window.SALIDAS = [
     id: 'puerto-vallarta',
     titulo: 'Puerto Vallarta',
     destino: 'Plan todo incluido',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: '11 al 14 sep 2026',
     precio: '$13,300 p/p',
     descripcion: 'Vacaciones en Puerto Vallarta con plan todo incluido según la promoción.',
@@ -91,7 +91,7 @@ window.SALIDAS = [
     id: 'chiapas',
     titulo: 'Escapada a Chiapas',
     destino: 'Ruta por Chiapas',
-    categoria: 'nacional',
+    categoria: 'pueblos',
     fecha: '2 al 5 de noviembre',
     precio: '$19,800 · promo 2x1',
     descripcion: 'Recorrido por destinos destacados de Chiapas con servicios indicados en el flyer.',
@@ -102,7 +102,7 @@ window.SALIDAS = [
     id: 'tolantongo',
     titulo: 'Tolantongo',
     destino: 'Ruta de balnearios',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: 'Sábados y domingos',
     precio: '$480 p/p',
     descripcion: 'Salida de un día a Tolantongo. Consulta condiciones y lo que incluye la promoción.',
@@ -113,7 +113,7 @@ window.SALIDAS = [
     id: 'tecolutla',
     titulo: 'Tecolutla',
     destino: 'Liberación de tortuga',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: '17 al 18 de octubre',
     precio: '$2,499 p/p',
     descripcion: 'Escapada a Tecolutla con experiencia de liberación de tortuga.',
@@ -135,7 +135,7 @@ window.SALIDAS = [
     id: 'cervantino-guanajuato',
     titulo: 'Cervantino Guanajuato',
     destino: 'Festival Internacional Cervantino',
-    categoria: 'nacional',
+    categoria: 'pueblos',
     fecha: '10 y 11 oct 2026',
     precio: '$2,500 p/p',
     descripcion: 'Escapada a Guanajuato durante el Festival Internacional Cervantino.',
@@ -146,7 +146,7 @@ window.SALIDAS = [
     id: 'oaxaca',
     titulo: 'Oaxaca Mágico',
     destino: 'Escapada cultural',
-    categoria: 'nacional',
+    categoria: 'pueblos',
     fecha: '7 al 11 oct 2026',
     precio: '$11,800 adulto',
     descripcion: 'Viaje a Oaxaca con recorrido y servicios indicados en la promoción.',
@@ -168,7 +168,7 @@ window.SALIDAS = [
     id: 'los-cabos',
     titulo: 'Los Cabos',
     destino: 'Plan todo incluido',
-    categoria: 'nacional',
+    categoria: 'acuaticos',
     fecha: '2 al 5 de octubre',
     precio: '$14,799 p/p',
     descripcion: 'Viaje a Los Cabos con plan todo incluido según la promoción.',
@@ -179,7 +179,7 @@ window.SALIDAS = [
     id: 'glamping-mujeres',
     titulo: 'Glamping Entre Mujeres',
     destino: 'Escapada especial',
-    categoria: 'nacional',
+    categoria: 'otros',
     fecha: '19 al 20 de septiembre',
     precio: 'Desde $4,099',
     descripcion: 'Experiencia de glamping entre mujeres con actividades y servicios indicados en el flyer.',
@@ -223,7 +223,7 @@ window.SALIDAS = [
     const items = window.SALIDAS.filter(item => filter === 'todos' || item.categoria === filter);
 
     if (!items.length) {
-      list.innerHTML = `<div class="empty-state"><strong>No hay salidas publicadas en esta categoría por ahora.</strong><span>Escríbenos y revisamos opciones disponibles para tus fechas.</span><a class="btn" data-wa-message="Hola Thania, ¿qué salidas tienes disponibles próximamente?">Consultar por WhatsApp</a></div>`;
+      list.innerHTML = `<div class="empty-state"><strong>No hay tours publicados en esta categoría por ahora.</strong><span>Escríbenos y revisamos opciones disponibles para tus fechas.</span><a class="btn" data-wa-message="Hola Thania, ¿qué Tours MX tienes disponibles próximamente?">Consultar por WhatsApp</a></div>`;
       wireWhatsApp();
       return;
     }
@@ -232,11 +232,11 @@ window.SALIDAS = [
       <article class="departure-card reveal visible">
         <button class="departure-flyer" type="button" data-flyer="${item.imagen}" data-title="${item.titulo}" aria-label="Ver promoción de ${item.titulo} en grande">
           <img src="${item.imagen}" alt="Promoción ${item.titulo}" loading="lazy">
-          <span class="departure-label">${item.etiqueta || 'Salida'}</span>
+          <span class="departure-label">${item.etiqueta || 'Tour'}</span>
           <span class="flyer-zoom">Ver promoción</span>
         </button>
         <div class="departure-body">
-          <p class="eyebrow">Salida disponible</p>
+          <p class="eyebrow">Tour MX</p>
           <h2>${item.titulo}</h2>
           <p class="departure-destination">${item.destino}</p>
           <div class="departure-meta">
@@ -244,7 +244,7 @@ window.SALIDAS = [
             <span><strong>Precio</strong>${item.precio}</span>
           </div>
           <p>${item.descripcion}</p>
-          <a class="btn btn-block" data-wa-message="Hola Thania, quiero información sobre la salida ${item.titulo} (${item.fecha}).">Consultar disponibilidad</a>
+          <a class="btn btn-block" data-wa-message="Hola Thania, quiero información sobre el tour ${item.titulo} (${item.fecha}).">Consultar disponibilidad</a>
         </div>
       </article>`).join('');
 

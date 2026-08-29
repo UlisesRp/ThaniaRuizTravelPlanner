@@ -4,11 +4,11 @@
   const page = document.body.dataset.page || '';
   const navItems = [
     ['inicio', 'Inicio', 'index.html'],
-    ['salidas', 'Salidas', 'salidas.html'],
-    ['cruceros', 'Cruceros', 'cruceros.html'],
-    ['parques', 'Parques', 'parques.html'],
+    ['salidas', 'Tours MX', 'salidas.html'],
     ['caribe', 'Caribe', 'caribe.html'],
-    ['nosotros', 'Sobre Thania', 'nosotros.html'],
+    ['parques', 'Parques', 'parques.html'],
+    ['cruceros', 'Cruceros', 'cruceros.html'],
+    ['nosotros', 'Mi servicio', 'nosotros.html'],
     ['contacto', 'Contacto', 'contacto.html']
   ];
 
@@ -16,12 +16,6 @@
   if (header) {
     header.innerHTML = `
       <a class="skip-link" href="#contenido">Ir al contenido</a>
-      <div class="topbar">
-        <div class="container topbar-inner">
-          <span>Cruceros · Parques temáticos · Caribe · Salidas de mayoristas</span>
-          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Thania, quiero información para planear un viaje.')}" target="_blank" rel="noopener">WhatsApp: 55 7984 7656</a>
-        </div>
-      </div>
       <nav class="nav" aria-label="Navegación principal">
         <div class="container nav-inner">
           <a class="brand" href="index.html" aria-label="Thania Ruiz Travel Planner - Inicio">
@@ -49,19 +43,20 @@
               <img src="assets/logo.webp" alt="">
               <span><strong>Thania Ruiz</strong><small>Travel Planner</small></span>
             </a>
-            <p>Planeación personalizada para cruceros, parques temáticos, Caribe y salidas seleccionadas de operadores mayoristas.</p>
+            <p>Planeación personalizada para Caribe, parques temáticos, cruceros y experiencias en México.</p>
           </div>
           <div>
             <h3>Explora</h3>
-            <a href="salidas.html">Salidas y promociones</a>
-            <a href="cruceros.html">Cruceros</a>
-            <a href="parques.html">Parques temáticos</a>
+            <a href="salidas.html">Tours MX</a>
             <a href="caribe.html">Caribe</a>
+            <a href="parques.html">Parques</a>
+            <a href="cruceros.html">Cruceros</a>
           </div>
           <div>
             <h3>Información</h3>
-            <a href="nosotros.html">Sobre Thania</a>
+            <a href="nosotros.html">Mi servicio</a>
             <a href="contacto.html">Contacto</a>
+            <a href="contacto.html#preguntas">Preguntas frecuentes</a>
             <a href="contacto.html#cotizar">Solicitar cotización</a>
           </div>
           <div>
@@ -74,7 +69,7 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
           <span>© <span id="year"></span> Thania Ruiz Travel Planner.</span>
-          <span>Los precios, disponibilidad y condiciones de servicios operados por terceros están sujetos a confirmación.</span>
+          <span>Tarifas y disponibilidad sujetas a confirmación al momento de cotizar.</span>
         </div>
       </div>`;
   }
@@ -110,23 +105,21 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(form);
-      const nombre = data.get('nombre') || '';
-      const tipo = data.get('tipo') || '';
-      const destino = data.get('destino') || '';
-      const fechas = data.get('fechas') || '';
-      const viajeros = data.get('viajeros') || '';
-      const presupuesto = data.get('presupuesto') || '';
-      const mensaje = data.get('mensaje') || '';
+      const nombre = String(data.get('nombre') || '').trim();
+      const destino = String(data.get('destino') || '').trim();
+      const fechas = String(data.get('fechas') || '').trim();
+      const viajeros = String(data.get('viajeros') || '').trim();
+      const presupuesto = String(data.get('presupuesto') || '').trim();
 
       const text = [
-        `Hola Thania, soy ${nombre}. Quiero cotizar un viaje.`,
-        `Tipo de viaje: ${tipo || 'Por definir'}`,
-        `Destino o idea: ${destino || 'Por definir'}`,
-        `Fechas: ${fechas || 'Flexibles / por definir'}`,
-        `Viajeros: ${viajeros || 'Por definir'}`,
-        `Presupuesto aproximado: ${presupuesto || 'Por definir'}`,
-        mensaje ? `Comentarios: ${mensaje}` : ''
-      ].filter(Boolean).join('\n');
+        'Hola Thania, me gustaría cotizar un viaje ✨',
+        '',
+        `Nombre: ${nombre}`,
+        `Destino de interés: ${destino || 'Por definir'}`,
+        `Fechas aproximadas: ${fechas || 'Por definir'}`,
+        `No. de pasajeros: ${viajeros}`,
+        `Presupuesto aprox.: ${presupuesto}`
+      ].join('\n');
 
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
     });

@@ -1,31 +1,31 @@
 # Thania Ruiz Travel Planner
 
-Sitio web estático listo para GitHub Pages.
+Sitio web multipágina para Thania Ruiz Travel Planner.
 
-## Archivos principales
-
+## Secciones
 - `index.html` — Inicio
-- `salidas.html` — Catálogo de salidas de mayoristas
-- `cruceros.html` — Cruceros
-- `parques.html` — Parques temáticos
+- `salidas.html` — Tours MX
 - `caribe.html` — Caribe
-- `nosotros.html` — Sobre Thania
-- `contacto.html` — Formulario que envía la información a WhatsApp
-- `css/styles.css` — Estilos globales
-- `js/main.js` — Navegación, WhatsApp, formulario y animaciones
-- `js/salidas.js` — Datos y filtros del catálogo de salidas
+- `parques.html` — Disney y Universal
+- `cruceros.html` — Cruceros
+- `nosotros.html` — Mi servicio
+- `contacto.html` — Cotización + preguntas frecuentes
 
-## Agregar una salida nueva
+## Catálogo Tours MX
+Los paquetes se administran desde `js/salidas.js` y se muestran con filtros de:
+- Pueblos Mágicos
+- Caribe
+- Tours acuáticos
 
-Abre `js/salidas.js`, duplica un objeto dentro de `window.SALIDAS` y cambia sus datos. La página `salidas.html` genera las tarjetas automáticamente.
+Los flyers se encuentran en `assets/salidas/`.
 
-## WhatsApp configurado
+## WhatsApp
+Número configurado: 55 7984 7656 (`525579847656` en enlaces internacionales).
 
-Número: 55 7984 7656 (formato internacional usado en enlaces: 525579847656).
+## Pendientes de contenido
+- Sustituir el panel visual del hero por el video que entregue la clienta.
+- Integrar la mascota cuando se defina su ubicación y función visual.
+- Integrar imágenes finales de destinos/parques cuando se apruebe el acomodo.
 
-## Pendientes antes de publicación final
-
-1. Sustituir o agregar salidas reales con fechas/precios vigentes.
-2. Agregar redes sociales cuando la cliente las proporcione.
-3. Agregar correo si la cliente desea publicarlo.
-4. Conectar dominio y Google Search Console cuando corresponda.
+## Caché
+Los CSS/JS usan `?v=6` para forzar actualización en móvil y escritorio durante esta etapa de cambios.
