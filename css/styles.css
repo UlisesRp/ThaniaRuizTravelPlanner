@@ -817,48 +817,86 @@ body[data-page="salidas"] .filter-button:hover { background: #0b6673; border-col
     linear-gradient(120deg, #183c70 0%, #6256a8 55%, #2f82b6 100%);
 }
 .park-worlds { background: #fbfbfd; }
-.park-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.park-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .park-card {
   position: relative;
-  min-height: 560px;
-  padding: 42px;
-  border-radius: 30px;
+  min-height: 450px;
+  padding: 0;
+  border-radius: 34px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, .94fr);
   color: #fff;
-  box-shadow: 0 22px 55px rgba(30,48,88,.16);
+  box-shadow: 0 24px 60px rgba(30,48,88,.16);
   isolation: isolate;
 }
-.park-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
+.park-card::before,
 .park-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(10,20,45,.42));
 }
-.disney-card::before { background: linear-gradient(145deg, #725db9 0%, #bc71bb 52%, #efb7d3 100%); }
-.universal-card::before { background: linear-gradient(145deg, #03162d 0%, #0a3c69 58%, #227dac 100%); }
-.park-card-glow {
+.park-card::before { z-index: -3; }
+.park-card::after {
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(10,20,45,.14));
+}
+.disney-card::before {
+  background:
+    radial-gradient(circle at 18% 26%, rgba(255,255,255,.09), transparent 16%),
+    radial-gradient(circle at 84% 74%, rgba(255,235,246,.10), transparent 18%),
+    linear-gradient(90deg, #715ab2 0%, #8f72c1 40%, #be8bbf 74%, #d9aec7 100%);
+}
+.universal-card::before {
+  background:
+    radial-gradient(circle at 72% 26%, rgba(115,195,255,.12), transparent 20%),
+    linear-gradient(90deg, #091e38 0%, #0d3158 42%, #12476f 72%, #175b86 100%);
+}
+.park-card-copy {
+  position: relative;
+  z-index: 2;
+  padding: 50px 50px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.park-card-media {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.park-card-media::before,
+.park-card-media::after {
+  content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: -110px;
-  right: -90px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.22);
-  box-shadow: 0 0 0 62px rgba(255,255,255,.06), 0 0 0 124px rgba(255,255,255,.035);
+  inset: 0;
+}
+.disney-media::before {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255,255,255,.24), transparent 13%),
+    radial-gradient(circle at 82% 62%, rgba(255,245,251,.15), transparent 18%),
+    linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.08) 54%, rgba(255,255,255,.02) 100%);
+}
+.universal-media::before {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(157,215,255,.18), transparent 15%),
+    radial-gradient(circle at 64% 72%, rgba(255,255,255,.09), transparent 18%),
+    linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.10) 52%, rgba(255,255,255,.02) 100%);
+}
+.disney-media::after {
+  background: linear-gradient(90deg, rgba(113,90,178,0) 0%, rgba(113,90,178,0) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,.10) 100%);
+  backdrop-filter: blur(20px);
+}
+.universal-media::after {
+  background: linear-gradient(270deg, rgba(9,30,56,0) 0%, rgba(9,30,56,0) 16%, rgba(255,255,255,0) 34%, rgba(255,255,255,.10) 100%);
+  backdrop-filter: blur(18px);
 }
 .park-kicker {
   display: inline-flex;
   width: fit-content;
-  padding: 8px 12px;
+  padding: 10px 16px;
   border-radius: 999px;
   background: rgba(255,255,255,.13);
   border: 1px solid rgba(255,255,255,.18);
@@ -867,29 +905,131 @@ body[data-page="salidas"] .filter-button:hover { background: #0b6673; border-col
   text-transform: uppercase;
   letter-spacing: .08em;
 }
-.park-brand { margin: auto 0 18px; color: #fff; line-height: .95; }
-.disney-type {
-  font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
-  font-size: clamp(4rem, 8vw, 6.6rem);
-  font-weight: 500;
-  letter-spacing: -.04em;
-  text-shadow: 0 5px 18px rgba(55,24,83,.18);
+.disney-kicker {
+  font-family: "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+  text-transform: none;
+  font-size: .98rem;
+  letter-spacing: 0;
+}
+.park-brand {
+  margin: 20px 0 22px;
+  color: #fff;
+  line-height: 1;
+}
+.disney-wordmark img {
+  width: min(280px, 88%);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(255,255,255,.08));
+}
+.park-placeholder-logo {
+  position: absolute;
+  z-index: 1;
+  opacity: .12;
+  user-select: none;
+  pointer-events: none;
+}
+.disney-logo-bg {
+  right: 34px;
+  bottom: 34px;
+  width: min(290px, 76%);
+}
+.disney-logo-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .universal-type {
   font-family: "Arial Black", Impact, Haettenschweiler, sans-serif;
-  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 900;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
   text-transform: uppercase;
   text-shadow: 0 5px 18px rgba(0,0,0,.25);
+  white-space: nowrap;
 }
-.park-card > p { margin: 0 0 20px; color: rgba(255,255,255,.82); max-width: 560px; }
-.park-points { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 9px; }
-.park-points li { display: flex; gap: 9px; color: rgba(255,255,255,.9); font-size: .9rem; }
-.park-points li::before { content: "✦"; }
-.park-btn { width: fit-content; background: rgba(255,255,255,.96); color: #1d3150; box-shadow: none; }
+.park-copy {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.92);
+  max-width: 560px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+.disney-card .park-copy {
+  font-size: 1.04rem;
+  line-height: 1.76;
+}
+.park-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  gap: 12px;
+}
+.park-points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: rgba(255,255,255,.94);
+  font-size: .98rem;
+  line-height: 1.45;
+}
+.park-points li::before {
+  content: "✦";
+  color: rgba(255,255,255,.95);
+}
+.disney-points li::before { color: #fff4d4; }
+.park-btn {
+  width: fit-content;
+  min-height: 52px;
+  padding-inline: 22px;
+  background: rgba(255,255,255,.97);
+  color: #1d3150;
+  box-shadow: none;
+}
 .park-btn:hover { box-shadow: none; background: #fff; }
-
+.disney-btn {
+  background: linear-gradient(135deg, #fff 0%, #fff8e9 100%);
+  color: #513e87;
+}
+.park-placeholder-text {
+  position: absolute;
+  z-index: 1;
+  opacity: .16;
+  color: #fff;
+  user-select: none;
+  white-space: nowrap;
+  max-width: calc(100% - 36px);
+}
+.universal-media .park-placeholder-text {
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(2.9rem, 6vw, 5.3rem);
+  letter-spacing: .04em;
+}
+.magic-spark,
+.orbit-line {
+  position: absolute;
+  pointer-events: none;
+}
+.magic-spark {
+  width: 11px;
+  height: 11px;
+  background: rgba(255,255,255,.75);
+  clip-path: polygon(50% 0%, 60% 38%, 100% 50%, 60% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.42));
+  opacity: .64;
+}
+.spark-1 { top: 88px; right: 124px; transform: scale(1.0); }
+.spark-2 { top: 150px; right: 72px; transform: scale(.76); opacity: .48; }
+.spark-3 { bottom: 72px; right: 166px; transform: scale(.86); opacity: .44; }
+.orbit-line {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+}
+.orbit-1 { width: 320px; height: 160px; right: -50px; top: 44px; }
+.orbit-2 { width: 260px; height: 130px; right: 10px; bottom: 40px; }
 @media (max-width: 1120px) {
   .four-cards { grid-template-columns: repeat(2, 1fr); }
 }
@@ -897,12 +1037,23 @@ body[data-page="salidas"] .filter-button:hover { background: #0b6673; border-col
 @media (max-width: 900px) {
   .service-steps { grid-template-columns: repeat(2, 1fr); }
   .park-grid { grid-template-columns: 1fr; }
-  .park-card { min-height: 480px; }
+  .park-card { grid-template-columns: 1fr; min-height: 0; }
+  .park-card-copy { padding: 36px 34px 30px; }
+  .park-card-media { min-height: 230px; }
+  .disney-logo-bg { right: 24px; bottom: 24px; width: min(280px, 74%); }
 }
 
 @media (max-width: 700px) {
   .four-cards, .service-steps { grid-template-columns: 1fr; }
-  .park-card { min-height: 450px; padding: 30px 24px; }
-  .disney-type { font-size: 4.4rem; }
-  .universal-type { font-size: 3.2rem; }
+  .park-card-copy { padding: 30px 24px; }
+  .park-card-media { min-height: 190px; }
+  .park-copy, .disney-card .park-copy { font-size: 1rem; }
+  .park-points li { font-size: .95rem; }
+  .universal-type { font-size: 2.4rem; }
+  .universal-media .park-placeholder-text { left: 14px; font-size: 2.2rem; }
+  .disney-wordmark img { width: min(220px, 86%); }
+  .disney-logo-bg { right: 14px; bottom: 14px; width: min(200px, 68%); }
+  .spark-1 { top: 24px; right: 86px; }
+  .spark-2 { top: 84px; right: 28px; }
+  .spark-3 { bottom: 32px; right: 92px; }
 }
