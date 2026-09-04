@@ -1,6 +1,35 @@
 (() => {
   const WHATSAPP_NUMBER = '525579847656';
 
+  const intro = document.querySelector('#site-intro');
+  const introVideo = document.querySelector('#site-intro-video');
+  const introEnter = document.querySelector('#intro-enter');
+  const introSound = document.querySelector('#intro-sound');
+
+  if (intro && introVideo) {
+    const closeIntro = () => {
+      intro.classList.add('is-closing');
+      document.body.classList.remove('intro-open');
+      setTimeout(() => {
+        introVideo.pause();
+        intro.remove();
+      }, 700);
+    };
+
+    document.body.classList.add('intro-open');
+    introVideo.muted = true;
+    const playPromise = introVideo.play();
+    if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+    introVideo.addEventListener('ended', closeIntro, { once: true });
+    if (introEnter) introEnter.addEventListener('click', closeIntro);
+    if (introSound) {
+      introSound.addEventListener('click', () => {
+        introVideo.muted = !introVideo.muted;
+        introSound.textContent = introVideo.muted ? 'Sonido' : 'Silenciar';
+      });
+    }
+  }
+
   const page = document.body.dataset.page || '';
   const navItems = [
     ['inicio', 'Inicio', 'index.html'],
