@@ -29,3 +29,7 @@ Número configurado: 55 7984 7656 (`525579847656` en enlaces internacionales).
 
 ## Caché
 Los CSS/JS usan `?v=6` para forzar actualización en móvil y escritorio durante esta etapa de cambios.
+
+
+## v14
+Integración inicial de Takito: mascota junto al botón de WhatsApp, panel de servicio en Inicio y detalle temático en Caribe.
