@@ -104,6 +104,114 @@
     }
   </style>
 
+
+  <style>
+    /* Caribe v6 · sección visual para estilos de viaje */
+    body[data-page="caribe"] .caribe-style-grid {
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:22px;
+    }
+
+    body[data-page="caribe"] .caribe-style-card {
+      position:relative;
+      min-height:390px;
+      overflow:hidden;
+      border-radius:26px;
+      background:#073849;
+      box-shadow:0 18px 42px rgba(7,59,73,.16);
+      isolation:isolate;
+    }
+
+    body[data-page="caribe"] .caribe-style-card img {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-3;
+      transition:transform .45s ease;
+    }
+
+    body[data-page="caribe"] .caribe-style-card:nth-child(1) img { object-position:center center; }
+    body[data-page="caribe"] .caribe-style-card:nth-child(2) img { object-position:center center; }
+    body[data-page="caribe"] .caribe-style-card:nth-child(3) img { object-position:center center; }
+
+    body[data-page="caribe"] .caribe-style-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:linear-gradient(180deg, rgba(5,34,43,.05) 20%, rgba(5,34,43,.28) 52%, rgba(5,34,43,.92) 100%);
+    }
+
+    body[data-page="caribe"] .caribe-style-copy {
+      position:absolute;
+      left:24px;
+      right:24px;
+      bottom:22px;
+      z-index:2;
+      color:#fff;
+    }
+
+    body[data-page="caribe"] .caribe-style-chip {
+      display:inline-flex;
+      align-items:center;
+      min-height:32px;
+      padding:0 14px;
+      margin-bottom:12px;
+      border:1px solid rgba(255,255,255,.48);
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      backdrop-filter:blur(7px);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    body[data-page="caribe"] .caribe-style-card h3 {
+      color:#fff;
+      margin:0 0 8px;
+      font-size:clamp(1.45rem, 2.2vw, 1.85rem);
+      line-height:1.08;
+      text-shadow:0 2px 12px rgba(0,0,0,.22);
+    }
+
+    body[data-page="caribe"] .caribe-style-card p {
+      color:rgba(255,255,255,.94);
+      margin:0;
+      line-height:1.5;
+      font-size:1rem;
+      text-shadow:0 2px 10px rgba(0,0,0,.22);
+    }
+
+    body[data-page="caribe"] .caribe-style-card:hover img {
+      transform:scale(1.045);
+    }
+
+    @media (max-width: 900px) {
+      body[data-page="caribe"] .caribe-style-grid {
+        grid-template-columns:1fr;
+      }
+      body[data-page="caribe"] .caribe-style-card {
+        min-height:340px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body[data-page="caribe"] .caribe-style-card {
+        min-height:320px;
+        border-radius:22px;
+      }
+      body[data-page="caribe"] .caribe-style-copy {
+        left:18px;
+        right:18px;
+        bottom:18px;
+      }
+    }
+  </style>
+
 </head>
 <body data-page="caribe"><header id="site-header"></header><main id="contenido">
 <section class="page-hero caribe-hero-takito caribe-hero-clean"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Caribe</p><h1>Sol, arena y ese azul que cambia el mood.</h1><p>Resorts, escapadas en pareja, vacaciones en familia o unos días para desconectarte. Buscamos una opción que se sienta tan bien como se ve.</p></div></div></section>
@@ -117,11 +225,7 @@
 <a class="destination-card is-carousel punta" href="contacto.html#cotizar" aria-hidden="true"><div class="destination-copy"><span class="destination-badge">All inclusive</span><h3>Punta Cana</h3><p>Vacaciones enfocadas en resort, mar turquesa y días para disfrutar sin complicarte.</p><div class="destination-meta"><span>Resort</span><span>Familia</span><span>Pareja</span></div><span class="destination-cta">Cotizar Punta Cana →</span></div></a>
 <a class="destination-card is-carousel caribbean" href="contacto.html#cotizar" aria-hidden="true"><div class="destination-copy"><span class="destination-badge">Más opciones</span><h3>Más Caribe</h3><p>Cuéntame qué buscas y revisamos otras opciones disponibles según tu tipo de viaje.</p><div class="destination-meta"><span>Personalizado</span><span>Fechas flexibles</span><span>Asesoría</span></div><span class="destination-cta">Explorar opciones →</span></div></a>
 </div></div></div></section>
-<section class="section section-soft"><div class="container"><div class="section-head center reveal"><p class="eyebrow">Tu estilo de viaje</p><h2>No todas las vacaciones de playa son iguales.</h2></div><div class="info-grid">
-<div class="info-card reveal"><div class="mini-icon">☀</div><h3>Descanso</h3><p>Si quieres bajar el ritmo, priorizamos comodidad, ubicación y el tipo de hospedaje.</p></div>
-<div class="info-card reveal"><div class="mini-icon">◇</div><h3>Experiencias</h3><p>Si quieres actividades, revisamos cómo integrarlas sin saturar el itinerario.</p></div>
-<div class="info-card reveal"><div class="mini-icon">♡</div><h3>Celebraciones</h3><p>Viajes en pareja, familia o grupo pueden requerir prioridades distintas.</p></div>
-</div></div></section>
+<section class="section section-soft"><div class="container"><div class="section-head center reveal"><p class="eyebrow">Tu estilo de viaje</p><h2>No todas las vacaciones de playa son iguales.</h2></div><div class="caribe-style-grid"><article class="caribe-style-card reveal"><img src="assets/caribe-estilos/descanso-playa.png" alt="Hamaca y playa tranquila para descansar"><div class="caribe-style-copy"><span class="caribe-style-chip">Descanso</span><h3>Descanso</h3><p>Si quieres bajar el ritmo, priorizamos comodidad, ubicación y el tipo de hospedaje.</p></div></article><article class="caribe-style-card reveal"><img src="assets/caribe-estilos/experiencias-aventura.png" alt="Experiencia de kayak en un río de aguas rápidas"><div class="caribe-style-copy"><span class="caribe-style-chip">Experiencias</span><h3>Experiencias</h3><p>Si quieres actividades, revisamos cómo integrarlas sin saturar el itinerario.</p></div></article><article class="caribe-style-card reveal"><img src="assets/caribe-estilos/celebraciones-playa.png" alt="Montaje romántico para boda frente al mar"><div class="caribe-style-copy"><span class="caribe-style-chip">Celebraciones</span><h3>Celebraciones</h3><p>Viajes en pareja, familia o grupo pueden requerir prioridades distintas.</p></div></article></div></div></section>
 <section class="section"><div class="container"><div class="cta reveal caribe-cta-with-takito"><div class="cta-inner"><div class="cta-copy"><h2>¿Nos vamos al Caribe?</h2><p>Dime cuántas personas viajan y el presupuesto aproximado para empezar a buscar tu opción.</p></div><img class="cta-takito" src="assets/takito/takito-bebida.png" alt="Takito listo para unas vacaciones en el Caribe"><a class="btn btn-light" data-wa-message="Hola Thania, quiero cotizar un viaje al Caribe.">Cotizar Caribe</a></div></div></div></section>
 </main><footer id="site-footer"></footer><div class="whatsapp-companion">
     <img class="takito-peek" src="assets/takito-bravo.png" alt="" aria-hidden="true">

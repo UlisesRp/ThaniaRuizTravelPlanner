@@ -77,39 +77,224 @@
     }
   </style>
 
+
+  <style>
+    /* Inicio v18 — video dentro del hero */
+    .hero.hero-with-video{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background:#073849;
+    }
+
+    .hero-with-video .hero-bg-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+      z-index:-3;
+    }
+
+    .hero-with-video .hero-video-overlay{
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4,39,50,.94) 0%,
+          rgba(4,52,63,.88) 26%,
+          rgba(6,69,78,.68) 48%,
+          rgba(7,78,84,.34) 70%,
+          rgba(7,78,84,.16) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.08) 0%,
+          rgba(0,0,0,.03) 58%,
+          rgba(0,0,0,.16) 100%
+        );
+    }
+
+    .hero-with-video .hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-with-video .hero-copy h1,
+    .hero-with-video .hero-copy > p{
+      text-shadow:0 3px 20px rgba(0,0,0,.28);
+    }
+
+    @media (max-width: 760px){
+      .hero-with-video .hero-bg-video{
+        object-position:center center;
+      }
+
+      .hero-with-video .hero-video-overlay{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(4,39,50,.94) 0%,
+            rgba(4,52,63,.82) 56%,
+            rgba(5,66,75,.44) 100%
+          );
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .hero-with-video .hero-bg-video{
+        display:none;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* FIX v19: el video debe quedar visible dentro del hero */
+    .hero.hero-with-video{
+      position:relative !important;
+      overflow:hidden !important;
+      isolation:isolate !important;
+      background:#073849 !important;
+    }
+
+    .hero.hero-with-video::before,
+    .hero.hero-with-video::after{
+      z-index:1 !important;
+      pointer-events:none !important;
+    }
+
+    .hero-with-video .hero-bg-video{
+      position:absolute !important;
+      inset:0 !important;
+      width:100% !important;
+      height:100% !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      display:block !important;
+      z-index:0 !important;
+      opacity:1 !important;
+      visibility:visible !important;
+    }
+
+    .hero-with-video .hero-video-overlay{
+      position:absolute !important;
+      inset:0 !important;
+      z-index:1 !important;
+      pointer-events:none !important;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4,39,50,.88) 0%,
+          rgba(4,52,63,.78) 28%,
+          rgba(6,69,78,.52) 50%,
+          rgba(7,78,84,.22) 72%,
+          rgba(7,78,84,.08) 100%
+        ) !important;
+    }
+
+    .hero-with-video .hero-inner{
+      position:relative !important;
+      z-index:2 !important;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .hero-with-video .hero-bg-video{
+        display:block !important;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* Inicio v20 — hero solo con video */
+    .hero.hero-with-video.hero-video-only{
+      position:relative !important;
+      min-height:calc(100vh - 86px) !important;
+      overflow:hidden !important;
+      background:#000 !important;
+      padding:0 !important;
+      isolation:isolate;
+    }
+
+    .hero-video-only .hero-bg-video{
+      position:absolute !important;
+      inset:0 !important;
+      width:100% !important;
+      height:100% !important;
+      object-fit:cover !important;
+      object-position:center center !important;
+      display:block !important;
+      z-index:0 !important;
+      opacity:1 !important;
+      visibility:visible !important;
+    }
+
+    .hero-video-only::before,
+    .hero-video-only::after,
+    .hero-video-only .hero-video-overlay,
+    .hero-video-only .hero-inner{
+      display:none !important;
+    }
+
+    .hero-sound-toggle{
+      position:absolute;
+      left:28px;
+      bottom:28px;
+      z-index:4;
+      width:52px;
+      height:52px;
+      border:1px solid rgba(255,255,255,.38);
+      border-radius:50%;
+      background:rgba(0,0,0,.42);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      line-height:1;
+      cursor:pointer;
+      backdrop-filter:blur(8px);
+      box-shadow:0 12px 26px rgba(0,0,0,.22);
+    }
+
+    .hero-sound-toggle:hover{
+      transform:translateY(-1px);
+      background:rgba(0,0,0,.58);
+    }
+
+    @media (max-width:760px){
+      .hero.hero-with-video.hero-video-only{
+        min-height:72vh !important;
+      }
+
+      .hero-video-only .hero-bg-video{
+        object-position:center center !important;
+      }
+
+      .hero-sound-toggle{
+        left:18px;
+        bottom:18px;
+        width:46px;
+        height:46px;
+        font-size:20px;
+      }
+    }
+  </style>
+
 </head>
 <body data-page="inicio">
-  <div class="site-intro" id="site-intro" aria-label="Video de bienvenida">
-    <video class="site-intro-video" id="site-intro-video" autoplay muted playsinline preload="auto">
-      <source src="assets/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="site-intro-shade"></div>
-    <div class="site-intro-actions">
-      <button class="intro-sound" id="intro-sound" type="button" aria-label="Activar sonido">Sonido</button>
-      <button class="intro-enter" id="intro-enter" type="button">Entrar al sitio</button>
-    </div>
-  </div>
   <header id="site-header"></header>
 
   <main id="contenido">
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Thania Ruiz · Travel Planner</p>
-          <h1>Tu viaje merece estar <span>bien planeado.</span></h1>
-          <p>Caribe, parques temáticos, cruceros y experiencias en México pensadas para que disfrutes desde la planeación.</p>
-          <div class="hero-actions">
-            <a class="btn" href="contacto.html#cotizar">Cotizar mi viaje</a>
-            <a class="btn btn-outline" href="salidas.html">Explorar Tours MX</a>
-          </div>
-          <div class="hero-tags" aria-label="Especialidades">
-            <span>Tours MX</span>
-            <span>Caribe</span>
-            <span>Parques</span>
-            <span>Cruceros</span>
-          </div>
-        </div>
-      </div>
+    <section class="hero hero-with-video hero-video-only">
+      <video id="heroVideo" class="hero-bg-video" autoplay loop playsinline preload="auto" controlslist="nodownload noplaybackrate">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <button id="heroSoundToggle" class="hero-sound-toggle" type="button" aria-label="Activar o desactivar sonido" title="Sonido">🔊</button>
     </section>
 
     <div class="trust-strip">
@@ -228,6 +413,48 @@
     <img class="takito-peek" src="assets/takito-bravo.png" alt="" aria-hidden="true">
     <a class="whatsapp-float" data-wa-message="Hola Thania, quiero información para planear un viaje." aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.82 9.82 0 0 0-8.43 14.87L2.1 22l5.25-1.38A9.99 9.99 0 1 0 12.04 2Zm5.79 14.08c-.25.7-1.47 1.34-2.02 1.42-.52.08-1.18.12-1.9-.12-.44-.14-1-.33-1.73-.64-3.04-1.31-5.03-4.36-5.18-4.56-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.3.61-.37.81-.37.2 0 .4 0 .58.01.19.01.44-.07.69.53.25.6.84 2.05.91 2.2.08.15.13.33.03.53-.1.2-.15.33-.3.51-.15.18-.32.4-.46.53-.15.15-.3.31-.13.61.18.3.79 1.3 1.69 2.11 1.16 1.03 2.14 1.35 2.44 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.68-.15.28.1 1.77.84 2.08.99.3.15.51.23.58.35.08.13.08.73-.17 1.43Z"/></svg></a>
   </div>
-  <script src="js/main.js?v=17"></script>
+  <script src="js/main.js?v=18"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const toggle = document.getElementById('heroSoundToggle');
+  if (!video || !toggle) return;
+
+  // Estado deseado al cargar: sonido ACTIVO.
+  video.muted = false;
+  video.volume = 1;
+
+  const updateIcon = () => {
+    toggle.textContent = video.muted ? '🔇' : '🔊';
+    toggle.setAttribute('aria-label', video.muted ? 'Activar sonido' : 'Silenciar video');
+    toggle.title = video.muted ? 'Activar sonido' : 'Silenciar';
+  };
+
+  const startWithSound = async () => {
+    try {
+      video.muted = false;
+      video.volume = 1;
+      await video.play();
+    } catch (err) {
+      // Algunos navegadores bloquean autoplay con sonido.
+      // En ese caso mantenemos el video visible y el botón permite activar audio al primer toque.
+      video.muted = true;
+      try { await video.play(); } catch (_) {}
+    }
+    updateIcon();
+  };
+
+  toggle.addEventListener('click', async () => {
+    video.muted = !video.muted;
+    video.volume = 1;
+    try { await video.play(); } catch (_) {}
+    updateIcon();
+  });
+
+  startWithSound();
+});
+</script>
+
 </body>
 </html>

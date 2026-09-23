@@ -73,6 +73,248 @@
     }
   </style>
 
+
+  <style>
+    /* Tours MX v22 — filtros visuales con las 3 imágenes de la clienta */
+    body[data-page="salidas"] .toursmx-filter-wrap{
+      margin: 0 0 42px;
+    }
+
+    body[data-page="salidas"] .toursmx-filter-top{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:14px;
+    }
+
+    body[data-page="salidas"] .toursmx-all-button{
+      border-radius:999px !important;
+      padding:10px 18px !important;
+    }
+
+    body[data-page="salidas"] .toursmx-visual-filters{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter{
+      position:relative;
+      display:block !important;
+      width:100%;
+      height:auto !important;
+      aspect-ratio:469 / 768;
+      padding:0 !important;
+      overflow:hidden;
+      border:2px solid transparent !important;
+      border-radius:24px !important;
+      background:#073849 !important;
+      box-shadow:0 15px 34px rgba(7,59,73,.13);
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center center;
+      background:#f4f1ea;
+      transition:transform .35s ease;
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(3,25,31,0) 45%, rgba(3,25,31,.78) 100%);
+      pointer-events:none;
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter span{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:16px;
+      z-index:2;
+      color:#fff;
+      font-weight:800;
+      font-size:1.05rem;
+      text-align:left;
+      text-shadow:0 2px 10px rgba(0,0,0,.35);
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 40px rgba(7,59,73,.20);
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter:hover img{
+      transform:scale(1.035);
+    }
+
+    body[data-page="salidas"] .toursmx-image-filter.active{
+      border-color:#18bfd0 !important;
+      box-shadow:0 0 0 4px rgba(24,191,208,.14), 0 20px 40px rgba(7,59,73,.18);
+    }
+
+    @media (max-width: 800px){
+      body[data-page="salidas"] .toursmx-visual-filters{
+        grid-template-columns:1fr;
+      }
+
+      body[data-page="salidas"] .toursmx-image-filter{
+        height:auto !important;
+        aspect-ratio:0.593 / 1;
+        max-width:430px;
+        margin-inline:auto;
+      }
+
+      body[data-page="salidas"] .toursmx-filter-top{
+        justify-content:flex-start;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* Tours MX v24 — sección visual de acompañamiento */
+    body[data-page="salidas"] .tours-process-section{
+      padding-top:78px;
+      padding-bottom:82px;
+    }
+
+    body[data-page="salidas"] .tours-process-head{
+      max-width:720px;
+      margin-bottom:30px;
+    }
+
+    body[data-page="salidas"] .tours-process-head h2{
+      margin-bottom:10px;
+    }
+
+    body[data-page="salidas"] .tours-process-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:20px;
+    }
+
+    body[data-page="salidas"] .tours-process-card{
+      position:relative;
+      min-height:390px;
+      overflow:hidden;
+      border-radius:26px;
+      background:#073849;
+      box-shadow:0 18px 42px rgba(7,59,73,.16);
+      isolation:isolate;
+    }
+
+    body[data-page="salidas"] .tours-process-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      z-index:-3;
+      transition:transform .45s ease;
+    }
+
+    body[data-page="salidas"] .tours-process-card:nth-child(1) img{
+      object-position:58% center;
+    }
+
+    body[data-page="salidas"] .tours-process-card:nth-child(2) img{
+      object-position:52% center;
+    }
+
+    body[data-page="salidas"] .tours-process-card:nth-child(3) img{
+      object-position:56% center;
+    }
+
+    body[data-page="salidas"] .tours-process-overlay{
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg, rgba(5,34,43,.03) 22%, rgba(5,34,43,.30) 52%, rgba(5,34,43,.94) 100%);
+    }
+
+    body[data-page="salidas"] .tours-process-copy{
+      position:absolute;
+      left:24px;
+      right:24px;
+      bottom:23px;
+      z-index:2;
+      color:#fff;
+    }
+
+    body[data-page="salidas"] .tours-process-step{
+      display:inline-grid;
+      place-items:center;
+      min-width:42px;
+      height:29px;
+      padding:0 10px;
+      margin-bottom:10px;
+      border:1px solid rgba(255,255,255,.50);
+      border-radius:999px;
+      background:rgba(255,255,255,.13);
+      backdrop-filter:blur(7px);
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.08em;
+    }
+
+    body[data-page="salidas"] .tours-process-card h3{
+      color:#fff;
+      margin:0 0 8px;
+      font-size:clamp(1.35rem,2vw,1.75rem);
+      line-height:1.08;
+      text-shadow:0 2px 12px rgba(0,0,0,.22);
+    }
+
+    body[data-page="salidas"] .tours-process-card p{
+      color:rgba(255,255,255,.92);
+      margin:0;
+      line-height:1.5;
+      font-size:.98rem;
+      text-shadow:0 2px 10px rgba(0,0,0,.22);
+    }
+
+    body[data-page="salidas"] .tours-process-card:hover img{
+      transform:scale(1.045);
+    }
+
+    @media (max-width:900px){
+      body[data-page="salidas"] .tours-process-grid{
+        grid-template-columns:1fr;
+      }
+
+      body[data-page="salidas"] .tours-process-card{
+        min-height:360px;
+      }
+    }
+
+    @media (max-width:560px){
+      body[data-page="salidas"] .tours-process-section{
+        padding-top:58px;
+        padding-bottom:62px;
+      }
+
+      body[data-page="salidas"] .tours-process-card{
+        min-height:330px;
+        border-radius:22px;
+      }
+
+      body[data-page="salidas"] .tours-process-copy{
+        left:19px;
+        right:19px;
+        bottom:19px;
+      }
+    }
+  </style>
+
 </head>
 <body data-page="salidas">
 <header id="site-header"></header>
@@ -82,20 +324,72 @@
     <div class="container">
       <img class="toursmx-side-takito" src="assets/takito/takito-bebida.png" alt="" aria-hidden="true">
       <div class="section-head reveal"><p class="eyebrow">Elige tu tipo de experiencia</p><h2>¿Qué se te antoja para la próxima?</h2><p>Pueblos con encanto, Caribe mexicano o experiencias para mojarse, relajarse y disfrutar.</p></div>
-      <div class="filter-bar reveal" aria-label="Filtrar Tours MX">
-        <button class="filter-button active" data-filter="todos">Todos</button>
-        <button class="filter-button" data-filter="pueblos">Pueblos Mágicos</button>
-        <button class="filter-button" data-filter="caribe">Caribe</button>
-        <button class="filter-button" data-filter="acuaticos">Tours acuáticos</button>
+      <div class="toursmx-filter-wrap reveal" aria-label="Filtrar Tours MX">
+        <div class="toursmx-filter-top">
+          <button class="filter-button active toursmx-all-button" data-filter="todos">Ver todos</button>
+        </div>
+
+        <div class="toursmx-visual-filters">
+          <button class="filter-button toursmx-image-filter" data-filter="pueblos" aria-label="Filtrar por Pueblos Mágicos">
+            <img src="assets/toursmx/pueblos-magicos.webp" alt="">
+            <span>Pueblos Mágicos</span>
+          </button>
+
+          <button class="filter-button toursmx-image-filter" data-filter="caribe" aria-label="Filtrar por Caribe">
+            <img src="assets/toursmx/caribe.webp" alt="">
+            <span>Caribe</span>
+          </button>
+
+          <button class="filter-button toursmx-image-filter" data-filter="acuaticos" aria-label="Filtrar por Tours acuáticos">
+            <img src="assets/toursmx/tours-acuaticos.webp" alt="">
+            <span>Tours acuáticos</span>
+          </button>
+        </div>
       </div>
       <div class="departure-grid" id="salidas-list"></div>
     </div>
   </section>
-  <section class="section section-soft"><div class="container info-grid">
-    <div class="info-card reveal"><h3>Revisamos la opción</h3><p>Te comparto la información disponible para que conozcas fechas, inclusiones y condiciones antes de elegir.</p></div>
-    <div class="info-card reveal"><h3>Confirmamos disponibilidad</h3><p>Los lugares y tarifas pueden cambiar, así que los revisamos antes de formalizar cualquier reserva.</p></div>
-    <div class="info-card reveal"><h3>¿No hace match contigo?</h3><p>Si ninguna opción se ajusta a lo que buscas, podemos trabajar una cotización personalizada.</p></div>
-  </div></section>
+  <section class="section section-soft tours-process-section">
+    <div class="container">
+      <div class="section-head reveal tours-process-head">
+        <p class="eyebrow">Acompañamiento personalizado</p>
+        <h2>Tu viaje, paso a paso</h2>
+        <p>Revisamos cada detalle contigo para que elijas con claridad y viajes con tranquilidad.</p>
+      </div>
+
+      <div class="tours-process-grid">
+        <article class="tours-process-card reveal">
+          <img src="assets/toursmx/proceso/revisamos-opcion.webp" alt="Planeación personalizada de un viaje">
+          <div class="tours-process-overlay"></div>
+          <div class="tours-process-copy">
+            <span class="tours-process-step">01</span>
+            <h3>Revisamos tu opción</h3>
+            <p>Te comparto fechas, inclusiones y condiciones para que conozcas bien cada alternativa.</p>
+          </div>
+        </article>
+
+        <article class="tours-process-card reveal">
+          <img src="assets/toursmx/proceso/confirmamos-disponibilidad.webp" alt="Revisión de disponibilidad antes de reservar">
+          <div class="tours-process-overlay"></div>
+          <div class="tours-process-copy">
+            <span class="tours-process-step">02</span>
+            <h3>Confirmamos disponibilidad</h3>
+            <p>Validamos lugares y tarifas antes de formalizar cualquier reserva.</p>
+          </div>
+        </article>
+
+        <article class="tours-process-card reveal">
+          <img src="assets/toursmx/proceso/ajustamos-viaje.webp" alt="Asesoría para ajustar una propuesta de viaje">
+          <div class="tours-process-overlay"></div>
+          <div class="tours-process-copy">
+            <span class="tours-process-step">03</span>
+            <h3>Lo ajustamos contigo</h3>
+            <p>Si una opción no hace match, buscamos una alternativa más cercana a tu idea y presupuesto.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
   <section class="section"><div class="container"><div class="cta reveal"><div class="cta-inner"><div><h2>¿Buscas una fecha o destino específico?</h2><p>Escríbeme y revisamos qué opciones pueden funcionar para ti.</p></div><a class="btn btn-light" data-wa-message="Hola Thania, quiero saber qué Tours MX tienes disponibles para mis fechas.">Consultar Tours MX</a></div></div></div></section>
 </main>
 <footer id="site-footer"></footer>

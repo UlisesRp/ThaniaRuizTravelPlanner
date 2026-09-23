@@ -103,14 +103,95 @@
     }
   </style>
 
+
+  <style>
+    /* Mi servicio v3 — beneficios más visuales, fondo neutro y limpio */
+    body[data-page="nosotros"] .service-benefits{
+      display:grid !important;
+      grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+      gap:22px !important;
+    }
+
+    body[data-page="nosotros"] .service-benefit-card{
+      padding:0 !important;
+      overflow:hidden !important;
+      border-radius:26px !important;
+      border:1px solid rgba(7,59,73,.10) !important;
+      background:#f8f6f1 !important;
+      box-shadow:0 16px 34px rgba(7,59,73,.08) !important;
+    }
+
+    body[data-page="nosotros"] .service-benefit-media{
+      height:210px;
+      overflow:hidden;
+      background:#f1eee7;
+    }
+
+    body[data-page="nosotros"] .service-benefit-media img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 38%;
+    }
+
+    body[data-page="nosotros"] .service-benefit-card:nth-child(2) .service-benefit-media img{
+      object-position:center 44%;
+    }
+
+    body[data-page="nosotros"] .service-benefit-copy{
+      padding:22px 24px 25px;
+      background:linear-gradient(180deg,#fbfaf7 0%,#f6f8f7 100%);
+    }
+
+    body[data-page="nosotros"] .service-benefit-copy .mini-icon{
+      margin-bottom:14px;
+    }
+
+    body[data-page="nosotros"] .service-benefit-copy h3{
+      margin:0 0 9px;
+    }
+
+    body[data-page="nosotros"] .service-benefit-copy p{
+      margin:0;
+    }
+
+    @media (max-width:900px){
+      body[data-page="nosotros"] .service-benefits{
+        grid-template-columns:1fr !important;
+      }
+      body[data-page="nosotros"] .service-benefit-media{
+        height:260px;
+      }
+    }
+
+    @media (max-width:560px){
+      body[data-page="nosotros"] .service-benefit-media{
+        height:220px;
+      }
+      body[data-page="nosotros"] .service-benefit-copy{
+        padding:20px;
+      }
+    }
+  </style>
+
 </head>
 <body data-page="nosotros"><header id="site-header"></header><main id="contenido">
 <section class="page-hero service-hero"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Mi servicio</p><h1>Tu viaje merece atención, claridad y mucho corazón.</h1><p>Te acompaño para convertir una idea en un viaje bien pensado, con opciones que hagan sentido para ti y una atención cercana durante todo el proceso.</p></div></div></section>
 
 <section class="section"><div class="container"><div class="section-head center reveal"><p class="eyebrow">¿Por qué cotizar conmigo?</p><h2>Porque no eres una reservación más.</h2><p>La planeación parte de ti: lo que quieres vivir, cuánto quieres invertir y la manera en que te gusta viajar.</p></div><div class="info-grid service-benefits">
-<div class="info-card reveal"><div class="mini-icon">♡</div><h3>Atención personalizada</h3><p>Escucho tu idea, tus prioridades y tu presupuesto para buscar algo que realmente se adapte a ti.</p></div>
-<div class="info-card reveal"><div class="mini-icon">↔</div><h3>Comparación de opciones</h3><p>No te quedas con la primera alternativa. Revisamos posibilidades y las ponemos en contexto para decidir mejor.</p></div>
-<div class="info-card reveal"><div class="mini-icon">✦</div><h3>Buen servicio</h3><p>Comunicación clara, seguimiento y disposición para ayudarte antes de reservar y mientras avanzamos con tu viaje.</p></div>
+<article class="info-card service-benefit-card reveal">
+  <div class="service-benefit-media"><img src="assets/mi-servicio/atencion-personalizada.webp" alt="Asesora organizando un viaje de forma personalizada"></div>
+  <div class="service-benefit-copy"><div class="mini-icon">♡</div><h3>Atención personalizada</h3><p>Escucho tu idea, tus prioridades y tu presupuesto para buscar algo que realmente se adapte a ti.</p></div>
+</article>
+<article class="info-card service-benefit-card reveal">
+  <div class="service-benefit-media"><img src="assets/mi-servicio/comparacion-opciones.webp" alt="Comparación visual de distintas opciones de viaje"></div>
+  <div class="service-benefit-copy"><div class="mini-icon">↔</div><h3>Comparación de opciones</h3><p>No te quedas con la primera alternativa. Revisamos posibilidades y las ponemos en contexto para decidir mejor.</p></div>
+</article>
+<article class="info-card service-benefit-card reveal">
+  <div class="service-benefit-media"><img src="assets/mi-servicio/buen-servicio.webp" alt="Asesora revisando detalles de viaje y dando seguimiento"></div>
+  <div class="service-benefit-copy"><div class="mini-icon">✦</div><h3>Buen servicio</h3><p>Comunicación clara, seguimiento y disposición para ayudarte antes de reservar y mientras avanzamos con tu viaje.</p></div>
+</article>
 </div></div></section>
 
 <section class="section section-soft service-process"><div class="container"><div class="service-process-intro reveal"><div class="service-process-visual"><img src="assets/takito-office.png" alt="Takito trabajador planeando viajes"></div><div class="section-head center process-head"><p class="eyebrow">Así trabajamos juntas</p><h2>De tu idea al momento de hacer la maleta.</h2><p>Un proceso sencillo, cercano y sin hacerte sentir que tienes que saberlo todo desde el inicio.</p></div></div><div class="steps service-steps">

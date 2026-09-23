@@ -1,44 +1,89 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contacto y cotización | Thania Ruiz Travel Planner</title><meta name="description" content="Solicita una cotización personalizada con Thania Ruiz Travel Planner."><meta name="theme-color" content="#073849"><link rel="icon" href="assets/logo.webp"><link rel="stylesheet" href="css/styles.css?v=14">
   <style>
-    /* Contacto — hero con imagen correspondiente */
+    /* Contacto — hero con Takito atendiendo el teléfono */
     body[data-page="contacto"] .page-hero {
+      position: relative;
+      overflow: hidden;
       background:
-        linear-gradient(
-          90deg,
-          rgba(5,47,60,.94) 0%,
-          rgba(6,69,82,.84) 30%,
-          rgba(8,102,114,.62) 54%,
-          rgba(10,136,145,.28) 78%,
-          rgba(10,136,145,.06) 100%
-        ),
-        url('assets/contacto.jpg') center 52% / cover no-repeat !important;
+        radial-gradient(circle at 78% 28%, rgba(91,220,228,.18) 0 18%, transparent 42%),
+        linear-gradient(120deg, #073849 0%, #0a5867 52%, #e8f4f3 100%) !important;
+    }
+
+    body[data-page="contacto"] .page-hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: rgba(255,255,255,.34);
+      filter: blur(2px);
+      pointer-events: none;
     }
 
     body[data-page="contacto"] .page-hero .page-hero-inner {
+      position: relative;
+      z-index: 2;
       min-height: 470px;
       padding: 78px 0 62px;
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
       align-items: center;
+      gap: 34px;
     }
 
     body[data-page="contacto"] .page-hero .page-intro {
-      max-width: 700px;
+      max-width: 680px;
     }
 
     body[data-page="contacto"] .page-hero .page-intro h1,
-    body[data-page="contacto"] .page-hero .page-intro p {
-      text-shadow: 0 3px 18px rgba(0,0,0,.22);
+    body[data-page="contacto"] .page-hero .page-intro p,
+    body[data-page="contacto"] .page-hero .page-intro .eyebrow {
+      color: #fff;
+      text-shadow: 0 3px 18px rgba(0,0,0,.18);
+    }
+
+    body[data-page="contacto"] .contact-hero-takito {
+      position: relative;
+      z-index: 3;
+      width: min(390px, 100%);
+      height: auto;
+      justify-self: center;
+      align-self: end;
+      margin-bottom: -6px;
+      filter: drop-shadow(0 22px 34px rgba(0,0,0,.20));
+      user-select: none;
+      pointer-events: none;
     }
 
     @media (max-width: 900px) {
-      body[data-page="contacto"] .page-hero {
-        background-position: 60% center !important;
+      body[data-page="contacto"] .page-hero .page-hero-inner {
+        min-height: 430px;
+        padding: 58px 0 0;
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
 
-      body[data-page="contacto"] .page-hero .page-hero-inner {
-        min-height: 390px;
-        padding: 62px 0 48px;
+      body[data-page="contacto"] .page-hero .page-intro {
+        max-width: 100%;
+      }
+
+      body[data-page="contacto"] .contact-hero-takito {
+        width: min(280px, 70vw);
+        justify-self: center;
+        margin-top: 0;
+      }
+
+      body[data-page="contacto"] .page-hero::after {
+        width: 320px;
+        height: 320px;
+        right: 50%;
+        top: auto;
+        bottom: -80px;
+        transform: translateX(50%);
       }
     }
   </style>
@@ -90,7 +135,7 @@
 
 </head>
 <body data-page="contacto"><header id="site-header"></header><main id="contenido">
-<section class="page-hero"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Contacto</p><h1>Cuéntame qué viaje tienes en mente.</h1><p>No necesitas tener todo decidido. Con tu número de viajeros y un presupuesto aproximado ya podemos empezar a aterrizar ideas.</p></div></div></section>
+<section class="page-hero"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Contacto</p><h1>Cuéntame qué viaje tienes en mente.</h1><p>No necesitas tener todo decidido. Con tu número de viajeros y un presupuesto aproximado ya podemos empezar a aterrizar ideas.</p></div><img class="contact-hero-takito reveal" src="assets/takito/takito-telefono.png" alt="Takito atendiendo una llamada y tomando nota"></div></section>
 <section class="section" id="cotizar"><div class="container quote-layout"><aside class="contact-card reveal"><p class="eyebrow">Atención directa</p><h2>Thania Ruiz Travel Planner</h2><p>Completa los datos y al enviarlos se abrirá WhatsApp con tu solicitud lista para comenzar la cotización.</p><div class="contact-lines"><div class="contact-line"><span>WhatsApp</span><strong>55 7984 7656</strong></div><div class="contact-line"><span>Especialidades</span><strong>Caribe · Parques · Cruceros</strong></div><div class="contact-line"><span>También</span><strong>Tours y experiencias en México</strong></div></div><img class="takito-contacto-desk" src="assets/takito/takito-contacto.png" alt="Takito trabajando en su escritorio"></aside>
 <div class="form-card reveal"><div class="section-head"><p class="eyebrow">Solicitar cotización</p><h2>Empecemos ✨</h2><p>Destino y fechas pueden quedar abiertos. Lo más importante es saber cuántas personas viajan y el presupuesto aproximado.</p></div><form id="quote-form"><div class="form-grid">
 <div class="field full"><label for="nombre">Nombre *</label><input id="nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre"></div>

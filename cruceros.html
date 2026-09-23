@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cruceros | Thania Ruiz Travel Planner</title><meta name="description" content="Planea tu próximo crucero con apoyo para revisar itinerarios, cabinas, fechas e inclusiones."><meta name="theme-color" content="#071b36"><link rel="icon" href="assets/logo.webp"><link rel="stylesheet" href="css/styles.css?v=14">
   <style>
-    /* Cruceros — hero con imagen correspondiente */
+    /* Cruceros — hero actualizado con nueva imagen */
     body[data-page="cruceros"] .page-hero.cruise-hero {
       background:
         linear-gradient(
           90deg,
-          rgba(4,24,48,.94) 0%,
-          rgba(5,38,70,.86) 32%,
-          rgba(7,58,95,.62) 56%,
-          rgba(8,82,120,.24) 78%,
-          rgba(8,82,120,.06) 100%
+          rgba(27, 22, 34, .72) 0%,
+          rgba(27, 22, 34, .58) 24%,
+          rgba(27, 22, 34, .34) 42%,
+          rgba(27, 22, 34, .14) 60%,
+          rgba(27, 22, 34, .04) 100%
         ),
-        url('assets/crucero-hero.jpg') center 52% / cover no-repeat !important;
+        url('assets/crucero-hero.jpg') center center / cover no-repeat !important;
     }
 
     body[data-page="cruceros"] .cruise-hero .page-hero-inner {
@@ -33,7 +33,7 @@
 
     @media (max-width: 900px) {
       body[data-page="cruceros"] .page-hero.cruise-hero {
-        background-position: 62% center !important;
+        background-position: 68% center !important;
       }
 
       body[data-page="cruceros"] .cruise-hero .page-hero-inner {
@@ -41,17 +41,307 @@
         padding: 64px 0 50px;
       }
     }
+
+    /* Tarjetas visuales */
+    body[data-page="cruceros"] .info-grid.visual-cruise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card {
+      overflow: hidden;
+      padding: 0;
+      border-radius: 28px;
+      border: 1px solid rgba(13, 71, 108, 0.12);
+      background: #ffffff;
+      box-shadow: 0 16px 34px rgba(7, 27, 54, 0.08);
+      min-height: 100%;
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .card-image {
+      position: relative;
+      min-height: 250px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .card-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 25, 56, 0.12) 0%, rgba(5, 25, 56, 0.2) 52%, rgba(5, 25, 56, 0.72) 100%);
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .mini-icon {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      width: auto;
+      min-width: 42px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.28);
+      backdrop-filter: blur(8px);
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .card-copy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 22px 22px 24px;
+      color: #fff;
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .card-copy h3 {
+      color: #fff;
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+      line-height: 1.04;
+    }
+
+    body[data-page="cruceros"] .info-card.visual-card .card-copy p {
+      color: rgba(255,255,255,.92);
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.55;
+      max-width: 28ch;
+    }
+
+    @media (max-width: 980px) {
+      body[data-page="cruceros"] .info-grid.visual-cruise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body[data-page="cruceros"] .info-card.visual-card .card-image {
+        min-height: 280px;
+      }
+    }
+
+
+    /* Sección visual: familia antes de subir al crucero */
+    body[data-page="cruceros"] .cruise-visual {
+      position: relative;
+      min-height: 520px;
+      border-radius: 36px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(6, 27, 52, 0.08) 0%, rgba(6, 27, 52, 0.16) 44%, rgba(6, 27, 52, 0.42) 100%),
+        url('assets/cruceros-planeacion-familiar.png') center center / cover no-repeat !important;
+      box-shadow: 0 20px 42px rgba(7, 27, 54, 0.12);
+    }
+
+    body[data-page="cruceros"] .cruise-visual::before,
+    body[data-page="cruceros"] .cruise-visual::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    body[data-page="cruceros"] .cruise-visual .visual-note {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 2;
+      padding: 26px 24px;
+      border-radius: 24px;
+      background: rgba(5, 37, 68, 0.72);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 16px 36px rgba(4, 20, 39, 0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    body[data-page="cruceros"] .cruise-visual .visual-note strong,
+    body[data-page="cruceros"] .cruise-visual .visual-note p {
+      color: #fff;
+    }
+
+    body[data-page="cruceros"] .cruise-visual .visual-note strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.85rem;
+      line-height: 1.05;
+    }
+
+    body[data-page="cruceros"] .cruise-visual .visual-note p {
+      margin: 0;
+      max-width: 34ch;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      body[data-page="cruceros"] .cruise-visual {
+        min-height: 420px;
+        background-position: 58% center !important;
+      }
+
+      body[data-page="cruceros"] .cruise-visual .visual-note {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        padding: 20px 18px;
+      }
+
+      body[data-page="cruceros"] .cruise-visual .visual-note strong {
+        font-size: 1.45rem;
+      }
+
+      body[data-page="cruceros"] .cruise-visual .visual-note p {
+        font-size: 0.98rem;
+      }
+    }
+
+  </style>
+
+
+  <style>
+    /* Cruceros v5 — carrusel de navieras. Único cambio de esta versión. */
+    body[data-page="cruceros"] .cruise-lines-carousel{
+      padding:34px 0 38px;
+      background:#fff;
+      overflow:hidden;
+    }
+
+    body[data-page="cruceros"] .cruise-lines-viewport{
+      width:100%;
+      overflow:hidden !important;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+      mask-image:linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+
+    body[data-page="cruceros"] .cruise-lines-track{
+      display:flex;
+      width:max-content;
+      gap:18px;
+      will-change:transform;
+      animation:cruiseLinesScroll 18s linear infinite !important;
+      animation-play-state:running !important;
+    }
+
+
+    body[data-page="cruceros"] .cruise-lines-group{
+      display:flex;
+      gap:18px;
+      flex:none;
+    }
+
+    body[data-page="cruceros"] .cruise-line-card{
+      width:190px;
+      height:118px;
+      flex:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px 20px;
+      border:1px solid rgba(7,59,73,.10);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 10px 28px rgba(7,27,54,.07);
+    }
+
+    body[data-page="cruceros"] .cruise-line-card img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    @keyframes cruiseLinesScroll{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(calc(-50% - 9px)); }
+    }
+
+    @media (max-width:700px){
+      body[data-page="cruceros"] .cruise-lines-carousel{
+        padding:26px 0 30px;
+      }
+      body[data-page="cruceros"] .cruise-line-card{
+        width:150px;
+        height:96px;
+        padding:14px 16px;
+        border-radius:18px;
+      }
+      body[data-page="cruceros"] .cruise-lines-track,
+      body[data-page="cruceros"] .cruise-lines-group{
+        gap:14px;
+      }
+      @keyframes cruiseLinesScroll{
+        from{ transform:translateX(0); }
+        to{ transform:translateX(calc(-50% - 7px)); }
+      }
+    }
+
+
   </style>
 
 </head>
 <body data-page="cruceros"><header id="site-header"></header><main id="contenido">
 <section class="page-hero cruise-hero"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Cruceros</p><h1>El mar se disfruta más cuando todo está bien planeado.</h1><p>Itinerario, puerto de salida, tipo de cabina, noches e inclusiones pueden cambiar por completo la experiencia. Te ayudo a ordenarlo.</p></div></div></section>
-<section class="section"><div class="container"><div class="section-head reveal"><p class="eyebrow">Qué revisamos</p><h2>Tu crucero debe hacer match contigo.</h2></div><div class="info-grid">
-<div class="info-card reveal"><div class="mini-icon">↗</div><h3>Itinerario</h3><p>Puertos, duración, días de navegación y ritmo del viaje.</p></div>
-<div class="info-card reveal"><div class="mini-icon">⌂</div><h3>Cabina</h3><p>Interior, exterior, balcón u otras categorías según disponibilidad y presupuesto.</p></div>
-<div class="info-card reveal"><div class="mini-icon">◎</div><h3>Inclusiones</h3><p>Revisamos qué viene incluido y qué servicios pueden representar un costo adicional.</p></div>
+<section class="cruise-lines-carousel" aria-label="Navieras disponibles">
+  <div class="cruise-lines-viewport">
+    <div class="cruise-lines-track">
+      <div class="cruise-lines-group">
+        <div class="cruise-line-card"><img src="assets/navieras/princess.png" alt="Princess Cruises"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/disney-cruise-line.png" alt="Disney Cruise Line"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/royal-caribbean.png" alt="Royal Caribbean International"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/msc.png" alt="MSC Cruises"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/norwegian.png" alt="Norwegian Cruise Line"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/virgin-voyages.png" alt="Virgin Voyages"></div>
+        <div class="cruise-line-card"><img src="assets/navieras/celebrity-cruises.png" alt="Celebrity Cruises"></div>
+      </div>
+      <div class="cruise-lines-group" aria-hidden="true">
+        <div class="cruise-line-card"><img src="assets/navieras/princess.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/disney-cruise-line.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/royal-caribbean.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/msc.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/norwegian.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/virgin-voyages.png" alt=""></div>
+        <div class="cruise-line-card"><img src="assets/navieras/celebrity-cruises.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section"><div class="container"><div class="section-head reveal"><p class="eyebrow">Qué revisamos</p><h2>Tu crucero debe hacer match contigo.</h2></div><div class="info-grid visual-cruise-grid">
+<div class="info-card visual-card reveal">
+  <div class="card-image" style="background-image:url('assets/cruceros-itinerario-mapa.png')">
+    <div class="mini-icon">Ruta</div>
+    <div class="card-copy">
+      <h3>Itinerario</h3>
+      <p>Mapa con ruta, escalas, duración y ritmo del viaje para ver si realmente hace match contigo.</p>
+    </div>
+  </div>
+</div>
+<div class="info-card visual-card reveal">
+  <div class="card-image" style="background-image:url('assets/cruceros-cabina-suite.png')">
+    <div class="mini-icon">Cabina</div>
+    <div class="card-copy">
+      <h3>Cabina</h3>
+      <p>Interior, exterior, balcón o suite: revisamos cuál categoría te conviene según presupuesto y experiencia.</p>
+    </div>
+  </div>
+</div>
+<div class="info-card visual-card reveal">
+  <div class="card-image" style="background-image:url('assets/cruceros-inclusiones-deck.png')">
+    <div class="mini-icon">Incluye</div>
+    <div class="card-copy">
+      <h3>Inclusiones</h3>
+      <p>Deck, alberca, bebidas, buffet y extras: aterrizamos qué viene incluido y qué puede sumar costo adicional.</p>
+    </div>
+  </div>
+</div>
 </div></div></section>
-<section class="section section-soft"><div class="container split"><div class="visual-panel reveal cruise-visual"><div class="visual-note"><strong>Primer crucero o el siguiente.</strong><p>La planeación parte de tus fechas, viajeros, presupuesto y la experiencia que esperas a bordo y en cada escala.</p></div></div><div class="copy reveal"><p class="eyebrow">Antes de reservar</p><h2>Ordenamos las decisiones importantes.</h2><ul class="check-list"><li>Puerto de salida y logística para llegar.</li><li>Duración del itinerario y escalas.</li><li>Tipo de cabina y distribución para los viajeros.</li><li>Documentación y requisitos que corresponda verificar.</li><li>Políticas y condiciones de la tarifa seleccionada.</li></ul><a class="btn" data-wa-message="Hola Thania, quiero cotizar un crucero.">Cotizar crucero</a></div></div></section>
+<section class="section section-soft"><div class="container split"><div class="visual-panel reveal cruise-visual"><div class="visual-note"><strong>Primer crucero o el siguiente.</strong><p>Antes de subir al crucero, aterrizamos fechas, viajeros, presupuesto y la experiencia que esperan vivir desde el embarque.</p></div></div><div class="copy reveal"><p class="eyebrow">Antes de reservar</p><h2>Ordenamos las decisiones importantes.</h2><ul class="check-list"><li>Puerto de salida y logística para llegar.</li><li>Duración del itinerario y escalas.</li><li>Tipo de cabina y distribución para los viajeros.</li><li>Documentación y requisitos que corresponda verificar.</li><li>Políticas y condiciones de la tarifa seleccionada.</li></ul><a class="btn" data-wa-message="Hola Thania, quiero cotizar un crucero.">Cotizar crucero</a></div></div></section>
 <section class="section"><div class="container"><div class="cta reveal"><div class="cta-inner"><div><h2>¿Qué ruta te gustaría navegar?</h2><p>Cuéntame cuántos viajan y tu presupuesto aproximado para empezar.</p></div><a class="btn btn-light" href="contacto.html#cotizar">Empezar cotización</a></div></div></div></section>
 </main><footer id="site-footer"></footer><div class="whatsapp-companion">
     <img class="takito-peek" src="assets/takito-bravo.png" alt="" aria-hidden="true">

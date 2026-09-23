@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Parques | Thania Ruiz Travel Planner</title><meta name="description" content="Planeación de viajes a Disney y Universal con Thania Ruiz Travel Planner."><meta name="theme-color" content="#073849"><link rel="icon" href="assets/logo.webp"><link rel="stylesheet" href="css/styles.css?v=14">
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Parques | Thania Ruiz Travel Planner</title><meta name="description" content="Planeación de viajes a Disney y Universal con Thania Ruiz Travel Planner."><meta name="theme-color" content="#073849"><link rel="icon" href="assets/logo.webp"><link rel="stylesheet" href="css/styles.css?v=14"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
   <style>
     /* Parques — hero con imagen real */
     body[data-page="parques"] .page-hero.parks-hero {
@@ -313,19 +313,140 @@
     }
   </style>
 
+
+  <style>
+    /* Parques v22 — toque cursivo solicitado por la clienta */
+    body[data-page="parques"] .parks-hero .page-intro h1,
+    body[data-page="parques"] .park-worlds > .container > .section-head h2,
+    body[data-page="parques"] .cta h2{
+      font-family:"Dancing Script","Segoe Script","Brush Script MT",cursive !important;
+      font-weight:700 !important;
+      letter-spacing:.01em !important;
+    }
+
+    body[data-page="parques"] .parks-hero .page-intro h1{
+      font-size:clamp(3.5rem, 7vw, 6.4rem) !important;
+      line-height:.98 !important;
+    }
+
+    body[data-page="parques"] .park-worlds > .container > .section-head h2{
+      font-size:clamp(2.7rem, 5vw, 4.4rem) !important;
+      line-height:1.02 !important;
+    }
+
+    body[data-page="parques"] .universal-type{
+      font-family:"Bebas Neue","Arial Narrow",Arial,sans-serif !important;
+      font-size:clamp(3.35rem, 6vw, 5.45rem) !important;
+      line-height:.92 !important;
+      font-weight:400 !important;
+      text-transform:uppercase !important;
+      letter-spacing:.055em !important;
+      color:#fff !important;
+      text-shadow:0 4px 18px rgba(0,0,0,.30);
+      margin-bottom:18px !important;
+    }
+
+    body[data-page="parques"] .cta h2{
+      font-size:clamp(2.4rem, 4vw, 3.6rem) !important;
+      line-height:1 !important;
+    }
+
+    @media (max-width:720px){
+      body[data-page="parques"] .parks-hero .page-intro h1{
+        font-size:clamp(3rem, 15vw, 4.7rem) !important;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* Parques v24 — cards visuales en “Antes de reservar” */
+    body[data-page="parques"] .info-grid{
+      display:grid !important;
+      grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+      gap:22px !important;
+      align-items:stretch !important;
+    }
+
+    body[data-page="parques"] .info-card.visual-card{
+      padding:0 !important;
+      overflow:hidden !important;
+      border-radius:28px !important;
+      border:1px solid rgba(10,84,108,.12) !important;
+      background:#fff !important;
+      box-shadow:0 18px 40px rgba(6,35,56,.08) !important;
+    }
+
+    body[data-page="parques"] .info-card.visual-card .visual-media{
+      position:relative;
+      aspect-ratio: 16 / 11;
+      overflow:hidden;
+      background:#dbe9ed;
+    }
+
+    body[data-page="parques"] .info-card.visual-card .visual-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    body[data-page="parques"] .info-card.visual-card .visual-media::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:50%;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(9,35,56,.18) 100%);
+      pointer-events:none;
+    }
+
+    body[data-page="parques"] .info-card.visual-card .card-copy{
+      padding:22px 22px 24px !important;
+    }
+
+    body[data-page="parques"] .info-card.visual-card h3{
+      margin:0 0 10px !important;
+      font-size:1.55rem !important;
+      line-height:1.05 !important;
+    }
+
+    body[data-page="parques"] .info-card.visual-card p{
+      margin:0 !important;
+    }
+
+    @media (max-width: 960px){
+      body[data-page="parques"] .info-grid{
+        grid-template-columns:1fr !important;
+      }
+
+      body[data-page="parques"] .info-card.visual-card .visual-media{
+        aspect-ratio: 16 / 10;
+      }
+    }
+  </style>
+
 </head>
 <body data-page="parques"><header id="site-header"></header><main id="contenido">
 <section class="page-hero parks-hero"><div class="container page-hero-inner"><div class="page-intro reveal"><p class="eyebrow">Parques</p><h1>Dos universos. Mil formas de vivirlos.</h1><p>Disney y Universal tienen ritmos, hoteles, experiencias y formas de planear muy distintas. Te ayudo a construir un viaje que funcione para tu grupo.</p></div></div></section>
 
 <section class="section park-worlds"><div class="container"><div class="section-head center reveal"><p class="eyebrow">Elige tu mundo</p><h2>Magia, adrenalina o ambas.</h2><p>Una experiencia bien planeada se disfruta mucho más: elegimos hospedaje, ritmo, días de parque y detalles importantes para que el viaje se sienta redondo.</p></div><div class="park-grid">
 <article class="park-card disney-card reveal"><div class="park-card-copy"><span class="park-kicker disney-kicker">Una experiencia llena de magia</span><h2 class="park-brand disney-wordmark"><img src="assets/disney-logo.png" alt="Disney"></h2><p class="park-copy">Hoteles, días de parque, experiencias especiales y una planeación pensada para disfrutar cada momento sin correr de más.</p><ul class="park-points disney-points"><li>Días de parque según tu ritmo</li><li>Hospedaje ideal y mejor ubicación</li><li>Viajes en familia, pareja o amigos</li><li>Tips y recomendaciones previas</li></ul><a class="btn park-btn disney-btn" data-wa-message="Hola Thania, quiero cotizar un viaje a Disney.">Cotizar Disney</a></div><img class="takito-disney-corner" src="assets/takito-disney-corner.png" alt="" aria-hidden="true"></article>
-<article class="park-card universal-card reveal"><div class="park-card-copy"><span class="park-kicker">Emoción, mundos y adrenalina</span><h2 class="park-brand universal-type">Universal</h2><p class="park-copy">Una propuesta con energía, atracciones icónicas y días organizados para aprovechar la experiencia sin perder el gusto por viajar.</p><ul class="park-points"><li>Parques y experiencias prioritarias</li><li>Hospedaje y logística</li><li>Distribución inteligente de días</li><li>Recomendaciones antes de viajar</li></ul><a class="btn park-btn" data-wa-message="Hola Thania, quiero cotizar un viaje a Universal.">Cotizar Universal</a></div></article>
+<article class="park-card universal-card reveal"><div class="park-card-copy"><span class="park-kicker">Emoción, mundos y adrenalina</span><h2 class="park-brand universal-type">UNIVERSAL</h2><p class="park-copy">Una propuesta con energía, atracciones icónicas y días organizados para aprovechar la experiencia sin perder el gusto por viajar.</p><ul class="park-points"><li>Parques y experiencias prioritarias</li><li>Hospedaje y logística</li><li>Distribución inteligente de días</li><li>Recomendaciones antes de viajar</li></ul><a class="btn park-btn" data-wa-message="Hola Thania, quiero cotizar un viaje a Universal.">Cotizar Universal</a></div></article>
 </div></div></section>
 
 <section class="section section-soft"><div class="container"><div class="section-head center reveal"><p class="eyebrow">Antes de reservar</p><h2>Tu grupo define el plan.</h2><p>Edades, días disponibles, ritmo y presupuesto ayudan a decidir cómo conviene armar el viaje.</p></div><div class="info-grid">
-<div class="info-card reveal"><div class="mini-icon">⌛</div><h3>Días de parque</h3><p>Definimos cuántos días quieres dedicar y cómo equilibrarlos con descanso.</p></div>
-<div class="info-card reveal"><div class="mini-icon">⌂</div><h3>Hospedaje</h3><p>Revisamos ubicación y opciones que se adapten al plan y al presupuesto.</p></div>
-<div class="info-card reveal"><div class="mini-icon">✦</div><h3>Experiencias</h3><p>Priorizamos lo que más ilusión le hace a tu grupo para que el viaje se sienta suyo.</p></div>
+<article class="info-card visual-card reveal">
+  <div class="visual-media"><img src="assets/parques/dias-parque.png" alt="Planeación de días de parque"></div>
+  <div class="card-copy"><h3>Días de parque</h3><p>Definimos cuántos días quieres dedicar y cómo equilibrarlos con descanso.</p></div>
+</article>
+<article class="info-card visual-card reveal">
+  <div class="visual-media"><img src="assets/parques/hospedaje-disney.png" alt="Habitación de hotel con vista al castillo"></div>
+  <div class="card-copy"><h3>Hospedaje</h3><p>Revisamos ubicación y opciones que se adapten al plan y al presupuesto.</p></div>
+</article>
+<article class="info-card visual-card reveal">
+  <div class="visual-media"><img src="assets/parques/experiencias-montana-rusa.png" alt="Montaña rusa al atardecer"></div>
+  <div class="card-copy"><h3>Experiencias</h3><p>Priorizamos lo que más ilusión le hace a tu grupo para que el viaje se sienta suyo.</p></div>
+</article>
 </div></div></section>
 <section class="section"><div class="container"><div class="cta reveal"><div class="cta-inner"><div><h2>¿Disney, Universal o ambos?</h2><p>Cuéntame cuántos viajan, sus edades y tu presupuesto aproximado.</p></div><a class="btn btn-light" href="contacto.html#cotizar">Solicitar cotización</a></div></div></div></section>
 </main><footer id="site-footer"></footer><div class="whatsapp-companion">
