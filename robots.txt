@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thaniaruiztravel.com/sitemap.xml
