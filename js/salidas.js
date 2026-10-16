@@ -68,22 +68,22 @@ window.SALIDAS = [
   {
     id: 'ixtapa-zihuatanejo',
     titulo: 'Ixtapa Zihuatanejo',
-    destino: 'Escapada de playa',
+    destino: 'Hotel Emporio · Plan todo incluido',
     categoria: 'acuaticos',
-    fecha: '14 al 17 de enero',
-    precio: '$7,500 p/p',
-    descripcion: 'Viaje a Ixtapa Zihuatanejo con hospedaje y transportación según la promoción.',
+    fecha: '27 al 29 de octubre',
+    precio: '$18,499 total para dos personas',
+    descripcion: 'Incluye vuelo redondo con Aeroméxico desde AICM y hospedaje en plan todo incluido en Hotel Emporio Ixtapa.',
     etiqueta: 'Playa',
     imagen: 'assets/salidas/ixtapa-zihuatanejo.jpeg'
   },
   {
     id: 'puerto-vallarta',
     titulo: 'Puerto Vallarta',
-    destino: 'Plan todo incluido',
+    destino: 'Sunscape Puerto Vallarta · All Inclusive',
     categoria: 'acuaticos',
-    fecha: '11 al 14 sep 2026',
-    precio: '$13,300 p/p',
-    descripcion: 'Vacaciones en Puerto Vallarta con plan todo incluido según la promoción.',
+    fecha: '1 al 3 de diciembre',
+    precio: '$22,200 total para dos personas',
+    descripcion: 'Incluye vuelo redondo con Aeroméxico desde AICM, hospedaje en plan todo incluido y traslado aeropuerto - hotel - aeropuerto.',
     etiqueta: 'Playa',
     imagen: 'assets/salidas/puerto-vallarta.jpeg'
   },
@@ -123,35 +123,13 @@ window.SALIDAS = [
   {
     id: 'cancun',
     titulo: 'Cancún',
-    destino: 'Caribe mexicano',
+    destino: 'GR Solaris Cancún Resort & Spa · All Inclusive',
     categoria: 'caribe',
-    fecha: '2 al 5 nov 2026',
-    precio: '$10,900 p/p',
-    descripcion: 'Viaje a Cancún con servicios incluidos según la promoción publicada.',
+    fecha: '1 al 3 de diciembre',
+    precio: '$25,800 total para dos personas',
+    descripcion: 'Incluye vuelo redondo con Aeroméxico desde AICM, hospedaje en plan todo incluido y traslado aeropuerto - hotel - aeropuerto.',
     etiqueta: 'Caribe',
     imagen: 'assets/salidas/cancun.jpeg'
-  },
-  {
-    id: 'cervantino-guanajuato',
-    titulo: 'Cervantino Guanajuato',
-    destino: 'Festival Internacional Cervantino',
-    categoria: 'pueblos',
-    fecha: '10 y 11 oct 2026',
-    precio: '$2,500 p/p',
-    descripcion: 'Escapada a Guanajuato durante el Festival Internacional Cervantino.',
-    etiqueta: 'Cultural',
-    imagen: 'assets/salidas/cervantino-guanajuato.jpeg'
-  },
-  {
-    id: 'oaxaca',
-    titulo: 'Oaxaca Mágico',
-    destino: 'Escapada cultural',
-    categoria: 'pueblos',
-    fecha: '7 al 11 oct 2026',
-    precio: '$11,800 adulto',
-    descripcion: 'Viaje a Oaxaca con recorrido y servicios indicados en la promoción.',
-    etiqueta: 'Cultural',
-    imagen: 'assets/salidas/oaxaca-magico.jpeg'
   },
   {
     id: 'romance-caribe',
@@ -163,28 +141,6 @@ window.SALIDAS = [
     descripcion: 'Escapada al Caribe para adultos, con plan y servicios indicados en la promoción.',
     etiqueta: 'Solo adultos',
     imagen: 'assets/salidas/romance-caribe.jpeg'
-  },
-  {
-    id: 'los-cabos',
-    titulo: 'Los Cabos',
-    destino: 'Plan todo incluido',
-    categoria: 'acuaticos',
-    fecha: '2 al 5 de octubre',
-    precio: '$14,799 p/p',
-    descripcion: 'Viaje a Los Cabos con plan todo incluido según la promoción.',
-    etiqueta: 'Playa',
-    imagen: 'assets/salidas/los-cabos.jpeg'
-  },
-  {
-    id: 'glamping-mujeres',
-    titulo: 'Glamping Entre Mujeres',
-    destino: 'Escapada especial',
-    categoria: 'otros',
-    fecha: '19 al 20 de septiembre',
-    precio: 'Desde $4,099',
-    descripcion: 'Experiencia de glamping entre mujeres con actividades y servicios indicados en el flyer.',
-    etiqueta: 'Experiencia',
-    imagen: 'assets/salidas/glamping-entre-mujeres.jpeg'
   }
 ];
 
